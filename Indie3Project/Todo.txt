@@ -1,0 +1,11 @@
+==== Gameplay
+* Get Basic Platforming [ ]
+* Tilemap Loading	[ ] (from tiled)
+* Destructive Points?   [ ]
+* Weapon System		[ ]
+* Death/Respawn/Health  [ ]
+
+==== Graffix
+* Splatter Layer	[ ]
+* Glitter Layer		[ ]
+* Tinyparticles Layer	[ ]
