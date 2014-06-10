@@ -8,37 +8,16 @@ import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
 
 /**
- * The main menu, which leads into various other menus, like the profiles menu or pregame
+ * The pregame state lets you pick the map, and profiles of who will be playing. A lobby of sorts!
  */
-class MenuState extends FlxState
+class PregameState extends FlxState
 {
-	/**
-	 * Buttons! O:
-	 */
-	
-	 var pregameMenuButton:FlxButton;
-	 var profilesMenuButton:FlxButton;
-	 var optionsMenuButton:FlxButton;
-	
-	
-
 	/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
-
 	override public function create():Void
 	{
 		super.create();
-		
-		pregameMenuButton = new FlxButton( 16, 0, "Play", switchToPregame);
-		profilesMenuButton = new FlxButton( 16, 32, "Player Profiles");
-		optionsMenuButton = new FlxButton( 16, 64, "Options");
-		
-		
-		add(pregameMenuButton);
-		add(profilesMenuButton);
-		add(optionsMenuButton);
-		
 	}
 	
 	/**
@@ -57,13 +36,4 @@ class MenuState extends FlxState
 	{
 		super.update();
 	}	
-	
-	
-	/**
-	 * Button functions.
-	 */
-	public function switchToPregame():Void
-	{
-		FlxG.switchState(new PregameState());
-	}
 }

@@ -1,4 +1,5 @@
 ==== Gameplay
+* Player Profiles L/S 	[ ]
 * Get Basic Platforming [ ]
 * Tilemap Loading	[ ] (from tiled)
 * Destructive Points?   [ ]
