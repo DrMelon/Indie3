@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="tiles.png" tilewidth="16" tileheight="16">
+  <image source="../../../../../Active Projects/LD48/LD48Platformer/assets/images/tilemaps/tiles.png" width="64" height="80"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="100" height="100">
+  <properties>
+   <property name="tileset" value="tiles.png"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0UEKgCAURVGjgZDtf71RYBgUTjKRzoE3aNSvGwKjSr0P+LG59wGc9hax9xEcHXKLWDy/NerK/xUbT5u61g2exr1UrHWD/J71ky8b3xKufd6cBt+bKgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGMkGgVUD8A==
+  </data>
+ </layer>
+</map>

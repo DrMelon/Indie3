@@ -1,23 +1,93 @@
 package;
 
+import flixel.addons.tile.FlxTilemapExt;
+import flixel.addons.weapon.FlxBullet;
+import flixel.addons.weapon.FlxWeapon;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
+import flixel.tile.FlxTilemap;
 import flixel.ui.FlxButton;
+import flixel.util.FlxColor;
 import flixel.util.FlxMath;
+import flixel.util.FlxSave;
+import flixel.FlxCamera;
+import objects.Player;
+import data.PlayerProfile;
 
 /**
- * A FlxState which can be used for the actual gameplay.
+ * The actual gameplay is here; taking the information from the pregame, we set up the players, and add a timer
  */
 class PlayState extends FlxState
 {
+	/**
+	 * Handy deathmatch variables.
+	 */
+	
+	 var numPlayers:Int;
+	 var timeRemaining:Float;
+	 
+	 
+	 // Tilemap stuff
+	 var currentMap:TiledLevel;
+	 
+	 // Player list
+	 var playerList:Array<Player>;
+	 
+	 // Weapon List
+	 var weaponList:Array<FlxWeapon>;
+	
+	 // Profiles List
+	 var profileList:Array<PlayerProfile>;
+	 var profileSaveData:FlxSave;
+	 
+	 
 	/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
 	override public function create():Void
 	{
 		super.create();
+		bgColor = FlxColor.WHITE;
+		
+		// Test map
+		currentMap = new TiledLevel("assets/data/test.tmx");
+		add(currentMap.foregroundTiles);
+		// Create generic default map
+
+		
+		// Create players based on pregame data (todo)
+		// right now it just loads the first player profile
+		profileSaveData = new FlxSave();
+		profileSaveData.bind("ProfileData");
+		if (profileSaveData.data.profList == null)
+		{
+			var newProf:PlayerProfile = new PlayerProfile();
+			profileList.push(newProf);
+			profileSaveData.data.profList = profileList.splice(0, profileList.length);
+			profileSaveData.flush(); // saved!
+		}
+		else
+		{
+			profileList = profileSaveData.data.profList; //load profiles
+		}		
+		
+		playerList = new Array<Player>();
+		var player1:Player = new Player(this, 0, 0);
+		trace(profileList[0]);
+		player1.LoadProfile(profileList[0]);
+		playerList.push(player1);
+		add(player1);
+		
+		
+		CreateWeapons();
+		
+		player1.currentWeapon = weaponList[0];
+		weaponList[0].setParent(player1, 0, 0, true);
+		
+		FlxG.camera.follow(player1, FlxCamera.STYLE_PLATFORMER, null, 0.5);
+		
 	}
 	
 	/**
@@ -35,5 +105,39 @@ class PlayState extends FlxState
 	override public function update():Void
 	{
 		super.update();
+		
+		// Collide players with the tilemap
+		for (currentPlayer in playerList)
+		{
+			currentMap.collideWithLevel(currentPlayer);
+			if (FlxG.keys.pressed.X) // genericise to firekey for each player
+			{
+				currentPlayer.fireWeapon();
+			}			
+		}
+		
+		
+	
+		//FlxG.collide();
 	}	
+	
+	
+	public function CreateWeapons():Void
+	{
+		// Creates all the available weapons! (TODO: load from file?)
+		weaponList = new Array<FlxWeapon>();
+		// First though, create the bullets.
+		
+		
+		
+		// Little pistol blaster thing.
+		var testPistol:FlxWeapon = new FlxWeapon("Test Pistol", null, FlxBullet);
+		testPistol.makeImageBullet(50, "assets/images/shots_blaster.png", 0, 0, false, 16, 1, false, false);
+		testPistol.setBulletSpeed(200);
+		testPistol.setBulletLifeSpan(2.5);
+		weaponList.push(testPistol);
+		add(testPistol.group);
+		
+	
+	}
 }

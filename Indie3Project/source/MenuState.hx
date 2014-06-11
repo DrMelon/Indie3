@@ -31,7 +31,7 @@ class MenuState extends FlxState
 		super.create();
 		
 		pregameMenuButton = new FlxButton( 16, 0, "Play", switchToPregame);
-		profilesMenuButton = new FlxButton( 16, 32, "Player Profiles");
+		profilesMenuButton = new FlxButton( 16, 32, "Player Profiles", switchToProfiles);
 		optionsMenuButton = new FlxButton( 16, 64, "Options");
 		
 		
@@ -66,4 +66,9 @@ class MenuState extends FlxState
 	{
 		FlxG.switchState(new PregameState());
 	}
+	
+	public function switchToProfiles():Void
+	{
+		FlxG.switchState(new ProfileState());
+	}	
 }

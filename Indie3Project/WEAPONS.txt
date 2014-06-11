@@ -1,0 +1,4 @@
+Current weapons:
+	
+	Test Pistol:
+		single shots yo

@@ -18,7 +18,17 @@ class PregameState extends FlxState
 	override public function create():Void
 	{
 		super.create();
+		
+		// Currently just button to test 1 player
+		var justGo:FlxButton = new FlxButton(0, 0, "TEST DEBUG YES", StartGame);
+		add(justGo);
 	}
+	
+	public function StartGame():Void
+	{
+		FlxG.switchState(new PlayState());
+	}
+	
 	
 	/**
 	 * Function that is called when this state is destroyed - you might want to 
