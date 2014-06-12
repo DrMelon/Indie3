@@ -23,14 +23,14 @@ class FlxWeaponExt extends FlxWeapon
 	public var isReloading:Bool;
 	public var canFire:Bool;
 	
-	public var refireTime:Int;
-	public var refireCount:Int;
+	public var refireTime:Float;
+	public var refireCount:Float;
 	
 	public var maxAmmo:Int;
 	public var currentAmmo:Int;
 	
-	public var reloadTime:Int;
-	public var currentReload:Int;
+	public var reloadTime:Float;
+	public var currentReload:Float;
 	
 	
 	public function new(Name:String, ?ParentRef:FlxSprite, ?BulletType:Class<FlxBullet>, ?BulletID:Int = 0) 
@@ -60,7 +60,7 @@ class FlxWeaponExt extends FlxWeapon
 	{
 		if (isReloading == true)
 		{
-			currentReload++;
+			currentReload += FlxG.elapsed;
 			if (currentReload >= reloadTime)
 			{
 				currentReload = 0;
@@ -72,7 +72,7 @@ class FlxWeaponExt extends FlxWeapon
 		}
 		else if (refireCount > 0)
 		{
-			refireCount--;
+			refireCount -= FlxG.elapsed;
 			canFire = false;
 		}
 		else

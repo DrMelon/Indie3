@@ -13,3 +13,4 @@
 
 
 * Tinting shots etc
+* Final kill = slowdown & trails

@@ -1,8 +1,11 @@
 package;
 
+import flixel.addons.effects.FlxTrail;
 import flixel.addons.tile.FlxTilemapExt;
 import flixel.addons.weapon.FlxBullet;
 import flixel.addons.weapon.FlxWeapon;
+import flixel.addons.effects.FlxGlitchSprite;
+import flixel.addons.effects.FlxTrailArea;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -43,6 +46,11 @@ class PlayState extends FlxState
 	 var profileList:Array<PlayerProfile>;
 	 var profileSaveData:FlxSave;
 	 
+	 // For slomo stuff:
+	 var TrailArea:FlxTrailArea;
+	 var inSlowMo:Bool;
+	 var slowMoTimer:Int;
+	 
 	 
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -51,6 +59,7 @@ class PlayState extends FlxState
 	{
 		super.create();
 		bgColor = FlxColor.WHITE;
+
 		
 		// Test map
 		currentMap = new TiledLevel("assets/data/test.tmx");
@@ -81,7 +90,6 @@ class PlayState extends FlxState
 		playerList.push(player1);
 		add(player1);
 		
-		
 		CreateWeapons();
 		
 		player1.currentWeapon = weaponList[0];
@@ -91,6 +99,14 @@ class PlayState extends FlxState
 		
 		
 		FlxG.worldBounds.setSize(2048, 2048);
+		
+		
+		
+		TrailArea = new FlxTrailArea(0, 0, 2048, 2048, 0.8, 1, true);
+		TrailArea.add(player1);
+		
+
+		
 	}
 	
 	/**
@@ -100,6 +116,28 @@ class PlayState extends FlxState
 	override public function destroy():Void
 	{
 		super.destroy();
+	}
+	
+	public function EnterSlowMo():Void
+	{
+		if (inSlowMo == false)
+		{
+			FlxG.timeScale = 0.7;
+			add(TrailArea);
+			playerList[0].visible = false;
+			inSlowMo = true;
+		}
+	}
+	
+	public function ExitSlowMo():Void
+	{
+		if (inSlowMo == true)
+		{
+			FlxG.timeScale = 1.0;
+			remove(TrailArea);
+			playerList[0].visible = true;
+			inSlowMo = false;
+		}
 	}
 
 	/**
@@ -117,12 +155,26 @@ class PlayState extends FlxState
 			{
 				currentPlayer.fireWeapon();
 			}			
+			if (FlxG.keys.pressed.L)
+			{
+				EnterSlowMo();
+			}
 		}
 		
 		// Update weapons
 		for (currentWeapon in weaponList)
 		{
 			currentWeapon.update();
+		}
+		
+		if (inSlowMo)
+		{
+			slowMoTimer++;
+			if (slowMoTimer >= 60)
+			{
+				ExitSlowMo();
+				slowMoTimer = 0;
+			}
 		}
 	
 		//FlxG.collide();
