@@ -3,6 +3,8 @@ package objects;
 import flixel.addons.weapon.FlxBullet;
 import flixel.addons.weapon.FlxWeapon;
 import flixel.animation.FlxAnimation;
+import flixel.effects.particles.FlxEmitterExt;
+import flixel.effects.particles.FlxTypedEmitter.Bounds;
 import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.addons.plugin.control.FlxControl;
@@ -10,6 +12,7 @@ import flixel.addons.plugin.control.FlxControlHandler;
 import flixel.FlxObject;
 import data.PlayerProfile;
 import data.FlxWeaponExt;
+import flixel.util.FlxColorUtil;
 
 /**
  * The Player object is used to allow a player to interact with the world.
@@ -33,6 +36,11 @@ class Player extends FlxSprite
 	
 	// Reference to game state
 	public var gameState:PlayState;
+	
+	// Blood 
+	public var myBlood:FlxEmitterExt;
+	var isBleeding:Bool;
+	var bleedTime:Float;
 	
 	public function new( gs:PlayState, X:Int = 0, Y:Int = 0 ) 
 	{
@@ -82,6 +90,10 @@ class Player extends FlxSprite
 		centerOffsets();
 		
 		
+		// blood setup
+		myBlood = new FlxEmitterExt(x, y, 0);
+		myBlood.makeParticles("assets/images/bloodparticle.png", 50, 1, true, 0, true);
+		
 		
 	}
 	
@@ -92,6 +104,10 @@ class Player extends FlxSprite
 	
 	public function TakeDamage( dam:Int, source:FlxBullet ):Void
 	{
+		if (isBleeding == true)
+		{
+			return;
+		}
 		// The source is used for death messages to be broadcast.
 		
 		currentHealth -= dam;
@@ -103,6 +119,17 @@ class Player extends FlxSprite
 		}
 		
 		lastDamagedBy = source;
+		
+		//myProfile.colour = FlxColorUtil.getRandomColor();
+		
+		myBlood.x = x;
+		myBlood.y = y;
+		myBlood.setColor(myProfile.colour, FlxColorUtil.darken(myProfile.colour, 0.3));
+		myBlood.gravity = 240;
+		myBlood.endScale = new Bounds(0.15, 0.7);
+		myBlood.start(true, 1.0, 0.2, 25, 0.5);
+		isBleeding = true;
+		bleedTime = 15;
 	}
 	
 	public function Die():Void
@@ -154,7 +181,16 @@ class Player extends FlxSprite
 			flipX = false;
 		}
 		
-		
+		if (isBleeding)
+		{
+			bleedTime -= FlxG.elapsed * 60;
+			
+		}
+		if (bleedTime <= 0)
+		{
+			isBleeding = false;
+			myBlood.on = false;
+		}
 		
 		
 		super.update();

@@ -51,6 +51,10 @@ class PlayState extends FlxState
 	 var inSlowMo:Bool;
 	 var slowMoTimer:Int;
 	 
+	 // For blood stuff
+	 var bloodArea:FlxTrailArea;
+	 
+	 
 	 
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -63,32 +67,57 @@ class PlayState extends FlxState
 		
 		// Test map
 		currentMap = new TiledLevel("assets/data/test.tmx");
-		add(currentMap.foregroundTiles);
+		
 		// Create generic default map
 
 		
 		// Create players based on pregame data (todo)
 		// right now it just loads the first player profile
+		profileList = new Array<PlayerProfile>();
 		profileSaveData = new FlxSave();
 		profileSaveData.bind("ProfileData");
-		if (profileSaveData.data.profList == null)
+		if (profileSaveData.data.names == null)
 		{
+			// Create the lists, add blank entry
+			profileSaveData.data.names = new Array<String>();
+			profileSaveData.data.colours = new Array<Int>();
+			profileSaveData.data.kills = new Array<Int>();
+			profileSaveData.data.deaths = new Array<Int>();
+			
+			profileSaveData.data.names.push("Player");
+			profileSaveData.data.colours.push(FlxColor.RED);
+			profileSaveData.data.kills.push(0);
+			profileSaveData.data.deaths.push(0);
+			
 			var newProf:PlayerProfile = new PlayerProfile();
+			newProf.name = "Player";
+			newProf.colour = FlxColor.RED;
+			newProf.lifetimeKills = 0;
+			newProf.lifetimeDeaths = 0;
 			profileList.push(newProf);
-			profileSaveData.data.profList = profileList.splice(0, profileList.length);
-			profileSaveData.flush(); // saved!
+			
+			profileSaveData.flush(); //save
 		}
 		else
 		{
-			profileList = profileSaveData.data.profList; //load profiles
-		}		
+			// load them into the profile list
+			for (number in 0 ... profileSaveData.data.names.length)
+			{
+				var newProf:PlayerProfile = new PlayerProfile();
+				newProf.name = profileSaveData.data.names[number];
+				newProf.colour = profileSaveData.data.colours[number];
+				newProf.lifetimeKills = profileSaveData.data.kills[number];
+				newProf.lifetimeDeaths = profileSaveData.data.deaths[number];
+				profileList.push(newProf);				
+			}
+		}	
 		
 		playerList = new Array<Player>();
 		var player1:Player = new Player(this, 0, 0);
-		//trace(profileList[0]);
-		//player1.LoadProfile(profileList[0]);
+		trace(profileList[0]);
+		player1.LoadProfile(profileList[0]);
 		playerList.push(player1);
-		add(player1);
+		
 		
 		CreateWeapons();
 		
@@ -105,6 +134,17 @@ class PlayState extends FlxState
 		TrailArea = new FlxTrailArea(0, 0, 2048, 2048, 0.8, 1, true);
 		TrailArea.add(player1);
 		
+		bloodArea = new FlxTrailArea(0, 0, 1024, 1024, 1.0, 1, false);
+		for (bloodpart in player1.myBlood.members)
+		{
+			bloodArea.add(bloodpart);
+		}
+		
+		
+		add(player1.myBlood);
+		add(bloodArea);
+		add(currentMap.foregroundTiles);
+		add(player1);
 
 		
 	}
@@ -124,7 +164,6 @@ class PlayState extends FlxState
 		{
 			FlxG.timeScale = 0.7;
 			add(TrailArea);
-			playerList[0].visible = false;
 			inSlowMo = true;
 		}
 	}
@@ -135,7 +174,6 @@ class PlayState extends FlxState
 		{
 			FlxG.timeScale = 1.0;
 			remove(TrailArea);
-			playerList[0].visible = true;
 			inSlowMo = false;
 		}
 	}
@@ -155,9 +193,14 @@ class PlayState extends FlxState
 			{
 				currentPlayer.fireWeapon();
 			}			
-			if (FlxG.keys.pressed.L)
+			if (FlxG.keys.pressed.L) // slowmo test
 			{
+				//FlxG.camera.shake(0.005, 0.2);
 				EnterSlowMo();
+			}
+			if (FlxG.keys.pressed.K) // blood test
+			{
+				currentPlayer.TakeDamage(0, null);
 			}
 		}
 		

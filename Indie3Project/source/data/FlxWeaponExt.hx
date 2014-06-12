@@ -60,7 +60,7 @@ class FlxWeaponExt extends FlxWeapon
 	{
 		if (isReloading == true)
 		{
-			currentReload += FlxG.elapsed;
+			currentReload += FlxG.elapsed  * 60;
 			if (currentReload >= reloadTime)
 			{
 				currentReload = 0;
@@ -72,7 +72,7 @@ class FlxWeaponExt extends FlxWeapon
 		}
 		else if (refireCount > 0)
 		{
-			refireCount -= FlxG.elapsed;
+			refireCount -= FlxG.elapsed * 60;
 			canFire = false;
 		}
 		else

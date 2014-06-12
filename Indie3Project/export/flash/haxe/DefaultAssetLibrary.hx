@@ -44,6 +44,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/test.tmx", Reflect.field (AssetType, "text".toUpperCase ()));
 		className.set ("assets/images/all_anim.png", __ASSET__assets_images_all_anim_png);
 		type.set ("assets/images/all_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("assets/images/bloodparticle.png", __ASSET__assets_images_bloodparticle_png);
+		type.set ("assets/images/bloodparticle.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/images/idle_anim.png", __ASSET__assets_images_idle_anim_png);
 		type.set ("assets/images/idle_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
@@ -142,6 +144,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		addExternal("assets/data/indie3.tmx", "text", "assets/data/indie3.tmx");
 		addExternal("assets/data/test.tmx", "text", "assets/data/test.tmx");
 		addExternal("assets/images/all_anim.png", "image", "assets/images/all_anim.png");
+		addExternal("assets/images/bloodparticle.png", "image", "assets/images/bloodparticle.png");
 		addExternal("assets/images/idle_anim.png", "image", "assets/images/idle_anim.png");
 		addExternal("assets/images/images-go-here.txt", "text", "assets/images/images-go-here.txt");
 		addExternal("assets/images/indie3 jam stuff.png", "image", "assets/images/indie3 jam stuff.png");
@@ -206,6 +209,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/images/all_anim.png", __ASSET__assets_images_all_anim_png);
 		type.set ("assets/images/all_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		
+		className.set ("assets/images/bloodparticle.png", __ASSET__assets_images_bloodparticle_png);
+		type.set ("assets/images/bloodparticle.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		className.set ("assets/images/idle_anim.png", __ASSET__assets_images_idle_anim_png);
 		type.set ("assets/images/idle_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
@@ -928,6 +934,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep class __ASSET__assets_data_indie3_tmx extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_data_test_tmx extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_images_all_anim_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep class __ASSET__assets_images_bloodparticle_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_idle_anim_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_images_indie3_jam_stuff_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -1028,6 +1035,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif (windows || mac || linux)
 
 
@@ -1035,6 +1043,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:file("assets/data/indie3.tmx") class __ASSET__assets_data_indie3_tmx extends flash.utils.ByteArray {}
 @:file("assets/data/test.tmx") class __ASSET__assets_data_test_tmx extends flash.utils.ByteArray {}
 @:bitmap("assets/images/all_anim.png") class __ASSET__assets_images_all_anim_png extends flash.display.BitmapData {}
+@:bitmap("assets/images/bloodparticle.png") class __ASSET__assets_images_bloodparticle_png extends flash.display.BitmapData {}
 @:bitmap("assets/images/idle_anim.png") class __ASSET__assets_images_idle_anim_png extends flash.display.BitmapData {}
 @:file("assets/images/images-go-here.txt") class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray {}
 @:bitmap("assets/images/indie3 jam stuff.png") class __ASSET__assets_images_indie3_jam_stuff_png extends flash.display.BitmapData {}
