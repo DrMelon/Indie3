@@ -15,6 +15,7 @@ import flixel.util.FlxSave;
 import flixel.FlxCamera;
 import objects.Player;
 import data.PlayerProfile;
+import data.FlxWeaponExt;
 
 /**
  * The actual gameplay is here; taking the information from the pregame, we set up the players, and add a timer
@@ -36,7 +37,7 @@ class PlayState extends FlxState
 	 var playerList:Array<Player>;
 	 
 	 // Weapon List
-	 var weaponList:Array<FlxWeapon>;
+	 var weaponList:Array<FlxWeaponExt>;
 	
 	 // Profiles List
 	 var profileList:Array<PlayerProfile>;
@@ -88,6 +89,8 @@ class PlayState extends FlxState
 		
 		FlxG.camera.follow(player1, FlxCamera.STYLE_PLATFORMER, null, 0.5);
 		
+		
+		FlxG.worldBounds.setSize(2048, 2048);
 	}
 	
 	/**
@@ -116,7 +119,11 @@ class PlayState extends FlxState
 			}			
 		}
 		
-		
+		// Update weapons
+		for (currentWeapon in weaponList)
+		{
+			currentWeapon.update();
+		}
 	
 		//FlxG.collide();
 	}	
@@ -125,16 +132,20 @@ class PlayState extends FlxState
 	public function CreateWeapons():Void
 	{
 		// Creates all the available weapons! (TODO: load from file?)
-		weaponList = new Array<FlxWeapon>();
+		weaponList = new Array<FlxWeaponExt>();
 		// First though, create the bullets.
 		
 		
 		
 		// Little pistol blaster thing.
-		var testPistol:FlxWeapon = new FlxWeapon("Test Pistol", null, FlxBullet);
+		var testPistol:FlxWeaponExt = new FlxWeaponExt("Test Pistol", null, FlxBullet);
 		testPistol.makeImageBullet(50, "assets/images/shots_blaster.png", 0, 0, false, 16, 1, false, false);
 		testPistol.setBulletSpeed(200);
 		testPistol.setBulletLifeSpan(2.5);
+		testPistol.maxAmmo = 10;
+		testPistol.refireTime = 5;
+		testPistol.currentAmmo = 10;
+		testPistol.reloadTime = 30;
 		weaponList.push(testPistol);
 		add(testPistol.group);
 		

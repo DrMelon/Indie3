@@ -9,6 +9,7 @@ import flixel.addons.plugin.control.FlxControl;
 import flixel.addons.plugin.control.FlxControlHandler;
 import flixel.FlxObject;
 import data.PlayerProfile;
+import data.FlxWeaponExt;
 
 /**
  * The Player object is used to allow a player to interact with the world.
@@ -21,7 +22,7 @@ class Player extends FlxSprite
 
 	var myProfile:PlayerProfile;
 	//current theme
-	public var currentWeapon:FlxWeapon;
+	public var currentWeapon:FlxWeaponExt;
 	//available weapons
 	var currentHealth:Int;
 	var maxHealth:Int;

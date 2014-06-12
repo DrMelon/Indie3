@@ -1,1 +1,2 @@
 Weapons are kinda gloopy blobs of the player thingies themselves
+maybe weapon editor
