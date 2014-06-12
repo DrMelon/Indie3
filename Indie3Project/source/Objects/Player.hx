@@ -50,20 +50,21 @@ class Player extends FlxSprite
 		FlxControl.player1.setGravity(0, 400);			
 		
 		// Load graphics / create anims
-		loadGraphic("assets/images/placeholder2.png", true, 32, 32, true);
+		loadGraphic("assets/images/all_anim.png", true, 32, 32, true);
 		
 		var frameArrayRunAnim:Array<Int> = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-		//var frameArrayStartJumping:Array<Int> = [6];
-		//var frameArrayMiddleJumping:Array<Int> = [7];
-		//var frameArrayFalling:Array<Int> = [8];
-		//animation.add("idle", frameArrayIdleAnim, 12, true);
+		var frameArrayStartJumping:Array<Int> = [12];
+		var frameArrayMiddleJumping:Array<Int> = [13];
+		var frameArrayFalling:Array<Int> = [14];
+		var frameArrayIdleAnim:Array<Int> = [17];
+		animation.add("idle", frameArrayIdleAnim, 12, true);
 		animation.add("run", frameArrayRunAnim, 12, true);
-		//animation.add("jumpstart", frameArrayStartJumping, 12, true);
-		//animation.add("jumpmid", frameArrayMiddleJumping, 12, true);
-		//animation.add("falling", frameArrayFalling, 12, true);
+		animation.add("jumpstart", frameArrayStartJumping, 12, false);
+		animation.add("jumpmid", frameArrayMiddleJumping, 12, true);
+		animation.add("falling", frameArrayFalling, 12, true);
 		
-		animation.play("run");
-		
+		animation.play("idle");
+		allowCollisions = FlxObject.ANY;
 		
 		
 		
@@ -75,7 +76,7 @@ class Player extends FlxSprite
 		
 		
 		// offset the graphics a little so we're standing "in" tiles
-		height -= 4;
+		height -= 6;
 		width -= 12;
 		centerOffsets();
 		
@@ -120,6 +121,29 @@ class Player extends FlxSprite
 	
 	override public function update()
 	{
+		// Update Animations to be in line with what you're doing
+		if (velocity.y < -5)
+		{
+			animation.play("jumpstart");
+		}
+		else if (!this.isTouching(FlxObject.FLOOR) && velocity.y < 15 && velocity.y > -15) // peak of jump
+		{
+			animation.play("jumpmid");
+		}
+		else if (!this.isTouching(FlxObject.FLOOR)) // falling
+		{
+			animation.play("falling");
+		}
+		else if (Math.abs(velocity.x) > 1.0)
+		{
+			animation.play("run");
+		}
+		else
+		{
+			animation.play("idle");
+		}
+
+		
 		if (facing == FlxObject.LEFT)
 		{
 			flipX = true;
@@ -128,6 +152,8 @@ class Player extends FlxSprite
 		{
 			flipX = false;
 		}
+		
+		
 		
 		
 		super.update();

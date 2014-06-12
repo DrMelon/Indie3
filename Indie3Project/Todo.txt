@@ -10,3 +10,6 @@
 * Splatter Layer	[ ]
 * Glitter Layer		[ ]
 * Tinyparticles Layer	[ ]
+
+
+* Tinting shots etc

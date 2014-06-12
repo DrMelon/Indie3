@@ -42,12 +42,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/indie3.tmx", Reflect.field (AssetType, "text".toUpperCase ()));
 		className.set ("assets/data/test.tmx", __ASSET__assets_data_test_tmx);
 		type.set ("assets/data/test.tmx", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/images/all_anim.png", __ASSET__assets_images_all_anim_png);
+		type.set ("assets/images/all_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("assets/images/idle_anim.png", __ASSET__assets_images_idle_anim_png);
+		type.set ("assets/images/idle_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/images/indie3 jam stuff.png", __ASSET__assets_images_indie3_jam_stuff_png);
+		type.set ("assets/images/indie3 jam stuff.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("assets/images/jump_anim.png", __ASSET__assets_images_jump_anim_png);
+		type.set ("assets/images/jump_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/images/placeholder2.png", __ASSET__assets_images_placeholder2_png);
 		type.set ("assets/images/placeholder2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/images/placeholder_player.png", __ASSET__assets_images_placeholder_player_png);
 		type.set ("assets/images/placeholder_player.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("assets/images/run_anim.png", __ASSET__assets_images_run_anim_png);
+		type.set ("assets/images/run_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/images/shots.png", __ASSET__assets_images_shots_png);
 		type.set ("assets/images/shots.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/images/shots_blaster.png", __ASSET__assets_images_shots_blaster_png);
@@ -56,10 +66,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/music/music-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		className.set ("assets/sounds/sounds-go-here.txt", __ASSET__assets_sounds_sounds_go_here_txt);
 		type.set ("assets/sounds/sounds-go-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("assets/tiled/indie3 tileset copy.png", __ASSET__assets_tiled_indie3_tileset_copy_png);
-		type.set ("assets/tiled/indie3 tileset copy.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/tiled/indie3-background.gif", __ASSET__assets_tiled_indie3_background_gif);
 		type.set ("assets/tiled/indie3-background.gif", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("assets/tiled/indie3_tileset.png", __ASSET__assets_tiled_indie3_tileset_png);
+		type.set ("assets/tiled/indie3_tileset.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/tiled/tiles.png", __ASSET__assets_tiled_tiles_png);
 		type.set ("assets/tiled/tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/sounds/beep.mp3", __ASSET__assets_sounds_beep_mp3);
@@ -131,15 +141,20 @@ class DefaultAssetLibrary extends AssetLibrary {
 		addExternal("assets/data/data-goes-here.txt", "text", "assets/data/data-goes-here.txt");
 		addExternal("assets/data/indie3.tmx", "text", "assets/data/indie3.tmx");
 		addExternal("assets/data/test.tmx", "text", "assets/data/test.tmx");
+		addExternal("assets/images/all_anim.png", "image", "assets/images/all_anim.png");
+		addExternal("assets/images/idle_anim.png", "image", "assets/images/idle_anim.png");
 		addExternal("assets/images/images-go-here.txt", "text", "assets/images/images-go-here.txt");
+		addExternal("assets/images/indie3 jam stuff.png", "image", "assets/images/indie3 jam stuff.png");
+		addExternal("assets/images/jump_anim.png", "image", "assets/images/jump_anim.png");
 		addExternal("assets/images/placeholder2.png", "image", "assets/images/placeholder2.png");
 		addExternal("assets/images/placeholder_player.png", "image", "assets/images/placeholder_player.png");
+		addExternal("assets/images/run_anim.png", "image", "assets/images/run_anim.png");
 		addExternal("assets/images/shots.png", "image", "assets/images/shots.png");
 		addExternal("assets/images/shots_blaster.png", "image", "assets/images/shots_blaster.png");
 		addExternal("assets/music/music-goes-here.txt", "text", "assets/music/music-goes-here.txt");
 		addExternal("assets/sounds/sounds-go-here.txt", "text", "assets/sounds/sounds-go-here.txt");
-		addExternal("assets/tiled/indie3 tileset copy.png", "image", "assets/tiled/indie3 tileset copy.png");
 		addExternal("assets/tiled/indie3-background.gif", "image", "assets/tiled/indie3-background.gif");
+		addExternal("assets/tiled/indie3_tileset.png", "image", "assets/tiled/indie3_tileset.png");
 		addExternal("assets/tiled/tiles.png", "image", "assets/tiled/tiles.png");
 		addExternal("assets/sounds/beep.mp3", "music", "assets/sounds/beep.mp3");
 		addExternal("assets/sounds/flixel.mp3", "music", "assets/sounds/flixel.mp3");
@@ -189,14 +204,29 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/data/test.tmx", __ASSET__assets_data_test_tmx);
 		type.set ("assets/data/test.tmx", Reflect.field (AssetType, "text".toUpperCase ()));
 		
+		className.set ("assets/images/all_anim.png", __ASSET__assets_images_all_anim_png);
+		type.set ("assets/images/all_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		
+		className.set ("assets/images/idle_anim.png", __ASSET__assets_images_idle_anim_png);
+		type.set ("assets/images/idle_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		
+		className.set ("assets/images/indie3 jam stuff.png", __ASSET__assets_images_indie3_jam_stuff_png);
+		type.set ("assets/images/indie3 jam stuff.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		
+		className.set ("assets/images/jump_anim.png", __ASSET__assets_images_jump_anim_png);
+		type.set ("assets/images/jump_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		className.set ("assets/images/placeholder2.png", __ASSET__assets_images_placeholder2_png);
 		type.set ("assets/images/placeholder2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		className.set ("assets/images/placeholder_player.png", __ASSET__assets_images_placeholder_player_png);
 		type.set ("assets/images/placeholder_player.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		
+		className.set ("assets/images/run_anim.png", __ASSET__assets_images_run_anim_png);
+		type.set ("assets/images/run_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		className.set ("assets/images/shots.png", __ASSET__assets_images_shots_png);
 		type.set ("assets/images/shots.png", Reflect.field (AssetType, "image".toUpperCase ()));
@@ -210,11 +240,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/sounds/sounds-go-here.txt", __ASSET__assets_sounds_sounds_go_here_txt);
 		type.set ("assets/sounds/sounds-go-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
-		className.set ("assets/tiled/indie3 tileset copy.png", __ASSET__assets_tiled_indie3_tileset_copy_png);
-		type.set ("assets/tiled/indie3 tileset copy.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		
 		className.set ("assets/tiled/indie3-background.gif", __ASSET__assets_tiled_indie3_background_gif);
 		type.set ("assets/tiled/indie3-background.gif", Reflect.field (AssetType, "image".toUpperCase ()));
+		
+		className.set ("assets/tiled/indie3_tileset.png", __ASSET__assets_tiled_indie3_tileset_png);
+		type.set ("assets/tiled/indie3_tileset.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		className.set ("assets/tiled/tiles.png", __ASSET__assets_tiled_tiles_png);
 		type.set ("assets/tiled/tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
@@ -897,15 +927,20 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep class __ASSET__assets_data_data_goes_here_txt extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_data_indie3_tmx extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_data_test_tmx extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_images_all_anim_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep class __ASSET__assets_images_idle_anim_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_images_indie3_jam_stuff_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep class __ASSET__assets_images_jump_anim_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_placeholder2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_placeholder_player_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep class __ASSET__assets_images_run_anim_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_shots_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_shots_blaster_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_sounds_sounds_go_here_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_tiled_indie3_tileset_copy_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_tiled_indie3_background_gif extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep class __ASSET__assets_tiled_indie3_tileset_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_tiled_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_sounds_beep_mp3 extends flash.media.Sound { }
 @:keep class __ASSET__assets_sounds_flixel_mp3 extends flash.media.Sound { }
@@ -988,21 +1023,31 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
 #elseif (windows || mac || linux)
 
 
 @:file("assets/data/data-goes-here.txt") class __ASSET__assets_data_data_goes_here_txt extends flash.utils.ByteArray {}
 @:file("assets/data/indie3.tmx") class __ASSET__assets_data_indie3_tmx extends flash.utils.ByteArray {}
 @:file("assets/data/test.tmx") class __ASSET__assets_data_test_tmx extends flash.utils.ByteArray {}
+@:bitmap("assets/images/all_anim.png") class __ASSET__assets_images_all_anim_png extends flash.display.BitmapData {}
+@:bitmap("assets/images/idle_anim.png") class __ASSET__assets_images_idle_anim_png extends flash.display.BitmapData {}
 @:file("assets/images/images-go-here.txt") class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray {}
+@:bitmap("assets/images/indie3 jam stuff.png") class __ASSET__assets_images_indie3_jam_stuff_png extends flash.display.BitmapData {}
+@:bitmap("assets/images/jump_anim.png") class __ASSET__assets_images_jump_anim_png extends flash.display.BitmapData {}
 @:bitmap("assets/images/placeholder2.png") class __ASSET__assets_images_placeholder2_png extends flash.display.BitmapData {}
 @:bitmap("assets/images/placeholder_player.png") class __ASSET__assets_images_placeholder_player_png extends flash.display.BitmapData {}
+@:bitmap("assets/images/run_anim.png") class __ASSET__assets_images_run_anim_png extends flash.display.BitmapData {}
 @:bitmap("assets/images/shots.png") class __ASSET__assets_images_shots_png extends flash.display.BitmapData {}
 @:bitmap("assets/images/shots_blaster.png") class __ASSET__assets_images_shots_blaster_png extends flash.display.BitmapData {}
 @:file("assets/music/music-goes-here.txt") class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray {}
 @:file("assets/sounds/sounds-go-here.txt") class __ASSET__assets_sounds_sounds_go_here_txt extends flash.utils.ByteArray {}
-@:bitmap("assets/tiled/indie3 tileset copy.png") class __ASSET__assets_tiled_indie3_tileset_copy_png extends flash.display.BitmapData {}
 @:bitmap("assets/tiled/indie3-background.gif") class __ASSET__assets_tiled_indie3_background_gif extends flash.display.BitmapData {}
+@:bitmap("assets/tiled/indie3_tileset.png") class __ASSET__assets_tiled_indie3_tileset_png extends flash.display.BitmapData {}
 @:bitmap("assets/tiled/tiles.png") class __ASSET__assets_tiled_tiles_png extends flash.display.BitmapData {}
 @:sound("C:/HaxeToolkit/haxe/lib/flixel/3,3,1/assets/sounds/beep.mp3") class __ASSET__assets_sounds_beep_mp3 extends flash.media.Sound {}
 @:sound("C:/HaxeToolkit/haxe/lib/flixel/3,3,1/assets/sounds/flixel.mp3") class __ASSET__assets_sounds_flixel_mp3 extends flash.media.Sound {}

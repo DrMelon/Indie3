@@ -19,6 +19,7 @@ class ProfileState extends FlxState
 	
 	var profileSaveData:FlxSave;
 	
+	var currentProfile:Int;
 	
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -32,21 +33,30 @@ class ProfileState extends FlxState
 		profileSaveData = new FlxSave();
 		profileSaveData.bind("ProfileData");
 		
-		//if (profileSaveData.data.profList == null)
-	//	{
-			var newProf:PlayerProfile = new PlayerProfile();
-			profileList.push(newProf);
-			profileSaveData.data.profList = profileList.splice(0, profileList.length);
-			profileSaveData.flush(); // saved!
-	//	}
-	//	else
-	//	{
-	//		profileList = profileSaveData.data.profList; //load profiles
-	//	}
+		if (profileSaveData.data.names == null)
+		{
+			// Create the lists, add blank entry
+			
+		}
+		
+		
+		
+		// UI Stuff
+		
+		/// Profile display
+		var nameText:FlxText = new FlxText(16, 16, 0, "Name: " + profileList[0].name, 8, true);
+		var colourText:FlxText = new FlxText(16, 32, 0, "Favourite Colour: ", 8, true);
+		var colourBox:FlxSprite = new FlxSprite(64, 32);
+		colourBox.makeGraphic(16, 16, profileList[0].colour);
 		
 		
 		// Create back button
-		var backButton:FlxButton = new FlxButton(0, 0, "Back", goBack);
+		var backButton:FlxButton = new FlxButton(0, FlxG.height - 64, "Save & Go Back", goBack);
+		
+		
+		add(nameText);
+		add(colourText);
+		add(colourBox);
 		add(backButton);
 	}
 	
@@ -58,7 +68,6 @@ class ProfileState extends FlxState
 	
 	public function SaveProfiles():Void
 	{
-		profileSaveData.data.profList = profileList;
 		profileSaveData.flush(); // saved!
 	}
 	

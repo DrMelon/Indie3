@@ -1,4 +1,1 @@
-Current weapons:
-	
-	Test Pistol:
-		single shots yo
+Weapons are kinda gloopy blobs of the player thingies themselves

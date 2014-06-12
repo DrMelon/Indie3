@@ -75,8 +75,8 @@ class PlayState extends FlxState
 		
 		playerList = new Array<Player>();
 		var player1:Player = new Player(this, 0, 0);
-		trace(profileList[0]);
-		player1.LoadProfile(profileList[0]);
+		//trace(profileList[0]);
+		//player1.LoadProfile(profileList[0]);
 		playerList.push(player1);
 		add(player1);
 		
