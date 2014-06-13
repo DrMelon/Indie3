@@ -23,11 +23,11 @@ import flixel.util.FlxColorUtil;
 class Player extends FlxSprite
 {
 
-	var myProfile:PlayerProfile;
+	public var myProfile:PlayerProfile;
 	//current theme
 	public var currentWeapon:FlxWeaponExt;
 	//available weapons
-	var currentHealth:Int;
+	public var currentHealth:Int;
 	var maxHealth:Int;
 	var dead:Bool;
 	public var currentScore:Int;
@@ -120,9 +120,9 @@ class Player extends FlxSprite
 		
 		lastDamagedBy = source;
 		
-		//myProfile.colour = FlxColorUtil.getRandomColor();
 		
-		myBlood.x = x;
+		
+		myBlood.x = x + width / 2;
 		myBlood.y = y;
 		myBlood.setColor(myProfile.colour, FlxColorUtil.darken(myProfile.colour, 0.3));
 		myBlood.gravity = 240;

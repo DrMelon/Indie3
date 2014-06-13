@@ -1,13 +1,13 @@
 ==== Gameplay
 * Player Profiles L/S 	[ ]
-* Get Basic Platforming [ ]
-* Tilemap Loading	[ ] (from tiled)
+* Get Basic Platforming [X]
+* Tilemap Loading	[X] (from tiled)
 * Destructive Points?   [ ]
 * Weapon System		[ ]
 * Death/Respawn/Health  [ ]
 
 ==== Graffix
-* Splatter Layer	[ ]
+* Splatter Layer	[X]
 * Glitter Layer		[ ]
 * Tinyparticles Layer	[ ]
 

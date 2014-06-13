@@ -61,8 +61,10 @@ class FlxWeaponExt extends FlxWeapon
 		if (isReloading == true)
 		{
 			currentReload += FlxG.elapsed  * 60;
+			currentAmmo += cast((FlxG.elapsed * 60) * (currentReload/reloadTime * maxAmmo),Int);
 			if (currentReload >= reloadTime)
 			{
+				currentAmmo = maxAmmo;
 				currentReload = 0;
 				isReloading = false;
 				canFire = true;
@@ -84,7 +86,7 @@ class FlxWeaponExt extends FlxWeapon
 	public function reloadWeapon()
 	{
 		// RELOADING!!
-		currentAmmo = maxAmmo;
+		
 		currentReload = 0;
 		canFire = false;
 		isReloading = true;

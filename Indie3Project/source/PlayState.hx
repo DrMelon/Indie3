@@ -11,8 +11,10 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.tile.FlxTilemap;
+import flixel.ui.FlxBar;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
+import flixel.util.FlxColorUtil;
 import flixel.util.FlxMath;
 import flixel.util.FlxSave;
 import flixel.FlxCamera;
@@ -35,6 +37,8 @@ class PlayState extends FlxState
 	 
 	 // Tilemap stuff
 	 var currentMap:TiledLevel;
+	 var background_ng:FlxSprite;
+	 var background:FlxGlitchSprite;
 	 
 	 // Player list
 	 var playerList:Array<Player>;
@@ -55,6 +59,14 @@ class PlayState extends FlxState
 	 var bloodArea:FlxTrailArea;
 	 
 	 
+	 // HUD Stuff
+	 var hudArea:FlxSprite;
+	 var healthBar:FlxBar;
+	 var ammoBar:FlxBar;
+	 var slomoBar:FlxBar;
+	 
+	 
+	 
 	 
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -62,13 +74,24 @@ class PlayState extends FlxState
 	override public function create():Void
 	{
 		super.create();
-		bgColor = FlxColor.WHITE;
+		//bgColor = FlxColor.WHITE;
 
+		
+		slowMoTimer = 120;
 		
 		// Test map
 		currentMap = new TiledLevel("assets/data/test.tmx");
 		
-		// Create generic default map
+		// Background
+		background_ng = new FlxSprite(0, 0);
+		background_ng.loadGraphic("assets/images/bg.png");
+		background = new FlxGlitchSprite(background_ng, 8, 1, 0.03, null);
+		background.x = -16;
+		background.scale.x = 2;
+		background.scale.y = 2;
+		//background.scrollFactor.x = 0.3;
+		//background.scrollFactor.y = 0.3;
+		add(background);
 
 		
 		// Create players based on pregame data (todo)
@@ -131,7 +154,7 @@ class PlayState extends FlxState
 		
 		
 		
-		TrailArea = new FlxTrailArea(0, 0, 2048, 2048, 0.8, 1, true);
+		TrailArea = new FlxTrailArea(0, 0, 2048, 2048, 0.8, 3, true);
 		TrailArea.add(player1);
 		
 		bloodArea = new FlxTrailArea(0, 0, 1024, 1024, 1.0, 1, false);
@@ -144,8 +167,45 @@ class PlayState extends FlxState
 		add(player1.myBlood);
 		add(bloodArea);
 		add(currentMap.foregroundTiles);
+		add(TrailArea);
+		TrailArea.visible = false;
+		TrailArea.color = player1.myProfile.colour;
 		add(player1);
+		add(player1.currentWeapon.group);
+		
+		// hud stuff
+		hudArea = new FlxSprite(0, 200);
+		hudArea.makeGraphic(320, 40, FlxColor.CHARCOAL);
+		hudArea.scrollFactor.x = 0;
+		hudArea.scrollFactor.y = 0;
+		add(hudArea);
+		
+		
+		
+		healthBar = new FlxBar(4, 204, FlxBar.FILL_LEFT_TO_RIGHT, 320 - 8, 6, player1, "currentHealth", 0, 100, true);
+		healthBar.createFilledBar(FlxColor.CHARCOAL, FlxColor.RED, true, FlxColor.SALMON);
+		
+		ammoBar = new FlxBar(4, 210, FlxBar.FILL_LEFT_TO_RIGHT, 320 - 8, 6, player1.currentWeapon, "currentAmmo", 0, player1.currentWeapon.maxAmmo, true);
+		ammoBar.createFilledBar(FlxColor.CHARCOAL, FlxColor.GOLDEN, true, FlxColor.YELLOW);
 
+		slomoBar = new FlxBar(4, 216, FlxBar.FILL_HORIZONTAL_INSIDE_OUT, 320 - 8, 6, this, "slowMoTimer", 0, 120, true);
+		slomoBar.createFilledBar(FlxColor.CHARCOAL, FlxColor.BLUE, true, FlxColor.ROYAL_BLUE);
+		
+		healthBar.fixedPosition = true;
+		ammoBar.fixedPosition = true;
+		slomoBar.fixedPosition = true;
+		healthBar.scrollFactor.x = 0;
+		healthBar.scrollFactor.y = 0;
+		ammoBar.scrollFactor.x = 0;
+		ammoBar.scrollFactor.y = 0;
+		slomoBar.scrollFactor.x = 0;
+		slomoBar.scrollFactor.y = 0;
+		add(healthBar);
+		add(ammoBar);
+		add(slomoBar);
+		
+		
+		FlxG.camera.flash(FlxColor.GOLDEN, 0.4);
 		
 	}
 	
@@ -162,8 +222,9 @@ class PlayState extends FlxState
 	{
 		if (inSlowMo == false)
 		{
+			TrailArea.resetTrail();
 			FlxG.timeScale = 0.7;
-			add(TrailArea);
+			TrailArea.visible = true;
 			inSlowMo = true;
 		}
 	}
@@ -173,7 +234,7 @@ class PlayState extends FlxState
 		if (inSlowMo == true)
 		{
 			FlxG.timeScale = 1.0;
-			remove(TrailArea);
+			TrailArea.visible = false;
 			inSlowMo = false;
 		}
 	}
@@ -193,9 +254,13 @@ class PlayState extends FlxState
 			{
 				currentPlayer.fireWeapon();
 			}			
-			if (FlxG.keys.pressed.L) // slowmo test
+			if (FlxG.keys.pressed.C) // slowmo power
 			{
-				//FlxG.camera.shake(0.005, 0.2);
+				if (inSlowMo == false)
+				{
+					FlxG.camera.shake(0.005, 0.2);
+					FlxG.camera.flash(currentPlayer.myProfile.colour, 0.3);
+				}
 				EnterSlowMo();
 			}
 			if (FlxG.keys.pressed.K) // blood test
@@ -212,13 +277,15 @@ class PlayState extends FlxState
 		
 		if (inSlowMo)
 		{
-			slowMoTimer++;
-			if (slowMoTimer >= 60)
+			slowMoTimer--;
+			if (slowMoTimer <= 0)
 			{
 				ExitSlowMo();
-				slowMoTimer = 0;
+				slowMoTimer = 120;
 			}
 		}
+		
+		//background_ng.pixels = bloodArea.pixels;
 	
 		//FlxG.collide();
 	}	
@@ -242,7 +309,7 @@ class PlayState extends FlxState
 		testPistol.currentAmmo = 10;
 		testPistol.reloadTime = 30;
 		weaponList.push(testPistol);
-		add(testPistol.group);
+		
 		
 	
 	}

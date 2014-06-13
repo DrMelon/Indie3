@@ -17,7 +17,6 @@ class ProfileState extends FlxState
 {
 	// List of profiles.
 	var profileList:Array<PlayerProfile>;
-	
 	var profileSaveData:FlxSave;
 	
 	var currentProfile:Int;
@@ -79,7 +78,8 @@ class ProfileState extends FlxState
 		var colourText:FlxText = new FlxText(16, 32, 0, "Favourite Colour: ", 8, true);
 		var colourBox:FlxSprite = new FlxSprite(128, 32);
 		colourBox.makeGraphic(16, 16, profileList[currentProfile].colour);
-		
+		var killText:FlxText = new FlxText(16, 64, 0, "Kills: " + profileList[currentProfile].lifetimeKills, 8, true);
+		var deathText:FlxText = new FlxText(16, 80, 0, "Deaths: " + profileList[currentProfile].lifetimeDeaths, 8, true);
 		
 		// Create back button
 		var backButton:FlxButton = new FlxButton(0, FlxG.height - 64, "Save & Go Back", goBack);
@@ -88,6 +88,8 @@ class ProfileState extends FlxState
 		add(nameText);
 		add(colourText);
 		add(colourBox);
+		add(killText);
+		add(deathText);
 		add(backButton);
 	}
 	

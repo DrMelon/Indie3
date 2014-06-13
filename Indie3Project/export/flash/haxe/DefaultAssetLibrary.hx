@@ -44,6 +44,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/test.tmx", Reflect.field (AssetType, "text".toUpperCase ()));
 		className.set ("assets/images/all_anim.png", __ASSET__assets_images_all_anim_png);
 		type.set ("assets/images/all_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("assets/images/bg.png", __ASSET__assets_images_bg_png);
+		type.set ("assets/images/bg.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/images/bloodparticle.png", __ASSET__assets_images_bloodparticle_png);
 		type.set ("assets/images/bloodparticle.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/images/idle_anim.png", __ASSET__assets_images_idle_anim_png);
@@ -66,6 +68,46 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/shots_blaster.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
 		type.set ("assets/music/music-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/sounds/bass/BAP.wav", __ASSET__assets_sounds_bass_bap_wav);
+		type.set ("assets/sounds/bass/BAP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/bass/BIP.wav", __ASSET__assets_sounds_bass_bip_wav);
+		type.set ("assets/sounds/bass/BIP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/bass/JIMPJUMP.wav", __ASSET__assets_sounds_bass_jimpjump_wav);
+		type.set ("assets/sounds/bass/JIMPJUMP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/bass/SCHWAP.wav", __ASSET__assets_sounds_bass_schwap_wav);
+		type.set ("assets/sounds/bass/SCHWAP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/bass/SHAA.wav", __ASSET__assets_sounds_bass_shaa_wav);
+		type.set ("assets/sounds/bass/SHAA.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/bass/SPLOO.wav", __ASSET__assets_sounds_bass_sploo_wav);
+		type.set ("assets/sounds/bass/SPLOO.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/bass/SWOOSWOOSWO.wav", __ASSET__assets_sounds_bass_swooswooswo_wav);
+		type.set ("assets/sounds/bass/SWOOSWOOSWO.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/bass/WOAAAAAAAAAAH.wav", __ASSET__assets_sounds_bass_woaaaaaaaaaah_wav);
+		type.set ("assets/sounds/bass/WOAAAAAAAAAAH.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/bass/ZWAP.wav", __ASSET__assets_sounds_bass_zwap_wav);
+		type.set ("assets/sounds/bass/ZWAP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/bass/ZWOOP.wav", __ASSET__assets_sounds_bass_zwoop_wav);
+		type.set ("assets/sounds/bass/ZWOOP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/Indie3JAMMUSIX/BAP.wav", __ASSET__assets_sounds_indie3jammusix_bap_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/BAP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/Indie3JAMMUSIX/BIP.wav", __ASSET__assets_sounds_indie3jammusix_bip_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/BIP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/Indie3JAMMUSIX/JIMPJUMP.wav", __ASSET__assets_sounds_indie3jammusix_jimpjump_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/JIMPJUMP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/Indie3JAMMUSIX/SCHWAP.wav", __ASSET__assets_sounds_indie3jammusix_schwap_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/SCHWAP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/Indie3JAMMUSIX/SHAA.wav", __ASSET__assets_sounds_indie3jammusix_shaa_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/SHAA.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/Indie3JAMMUSIX/SPLOO.wav", __ASSET__assets_sounds_indie3jammusix_sploo_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/SPLOO.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/Indie3JAMMUSIX/SWOOSWOOSWO.wav", __ASSET__assets_sounds_indie3jammusix_swooswooswo_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/SWOOSWOOSWO.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/Indie3JAMMUSIX/WOAAAAAAAAAAH.wav", __ASSET__assets_sounds_indie3jammusix_woaaaaaaaaaah_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/WOAAAAAAAAAAH.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/Indie3JAMMUSIX/ZWAP.wav", __ASSET__assets_sounds_indie3jammusix_zwap_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/ZWAP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("assets/sounds/Indie3JAMMUSIX/ZWOOP.wav", __ASSET__assets_sounds_indie3jammusix_zwoop_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/ZWOOP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 		className.set ("assets/sounds/sounds-go-here.txt", __ASSET__assets_sounds_sounds_go_here_txt);
 		type.set ("assets/sounds/sounds-go-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		className.set ("assets/tiled/indie3-background.gif", __ASSET__assets_tiled_indie3_background_gif);
@@ -144,6 +186,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		addExternal("assets/data/indie3.tmx", "text", "assets/data/indie3.tmx");
 		addExternal("assets/data/test.tmx", "text", "assets/data/test.tmx");
 		addExternal("assets/images/all_anim.png", "image", "assets/images/all_anim.png");
+		addExternal("assets/images/bg.png", "image", "assets/images/bg.png");
 		addExternal("assets/images/bloodparticle.png", "image", "assets/images/bloodparticle.png");
 		addExternal("assets/images/idle_anim.png", "image", "assets/images/idle_anim.png");
 		addExternal("assets/images/images-go-here.txt", "text", "assets/images/images-go-here.txt");
@@ -155,6 +198,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 		addExternal("assets/images/shots.png", "image", "assets/images/shots.png");
 		addExternal("assets/images/shots_blaster.png", "image", "assets/images/shots_blaster.png");
 		addExternal("assets/music/music-goes-here.txt", "text", "assets/music/music-goes-here.txt");
+		addExternal("assets/sounds/bass/BAP.wav", "sound", "assets/sounds/bass/BAP.wav");
+		addExternal("assets/sounds/bass/BIP.wav", "sound", "assets/sounds/bass/BIP.wav");
+		addExternal("assets/sounds/bass/JIMPJUMP.wav", "sound", "assets/sounds/bass/JIMPJUMP.wav");
+		addExternal("assets/sounds/bass/SCHWAP.wav", "sound", "assets/sounds/bass/SCHWAP.wav");
+		addExternal("assets/sounds/bass/SHAA.wav", "sound", "assets/sounds/bass/SHAA.wav");
+		addExternal("assets/sounds/bass/SPLOO.wav", "sound", "assets/sounds/bass/SPLOO.wav");
+		addExternal("assets/sounds/bass/SWOOSWOOSWO.wav", "sound", "assets/sounds/bass/SWOOSWOOSWO.wav");
+		addExternal("assets/sounds/bass/WOAAAAAAAAAAH.wav", "sound", "assets/sounds/bass/WOAAAAAAAAAAH.wav");
+		addExternal("assets/sounds/bass/ZWAP.wav", "sound", "assets/sounds/bass/ZWAP.wav");
+		addExternal("assets/sounds/bass/ZWOOP.wav", "sound", "assets/sounds/bass/ZWOOP.wav");
+		addExternal("assets/sounds/Indie3JAMMUSIX/BAP.wav", "sound", "assets/sounds/Indie3JAMMUSIX/BAP.wav");
+		addExternal("assets/sounds/Indie3JAMMUSIX/BIP.wav", "sound", "assets/sounds/Indie3JAMMUSIX/BIP.wav");
+		addExternal("assets/sounds/Indie3JAMMUSIX/JIMPJUMP.wav", "sound", "assets/sounds/Indie3JAMMUSIX/JIMPJUMP.wav");
+		addExternal("assets/sounds/Indie3JAMMUSIX/SCHWAP.wav", "sound", "assets/sounds/Indie3JAMMUSIX/SCHWAP.wav");
+		addExternal("assets/sounds/Indie3JAMMUSIX/SHAA.wav", "sound", "assets/sounds/Indie3JAMMUSIX/SHAA.wav");
+		addExternal("assets/sounds/Indie3JAMMUSIX/SPLOO.wav", "sound", "assets/sounds/Indie3JAMMUSIX/SPLOO.wav");
+		addExternal("assets/sounds/Indie3JAMMUSIX/SWOOSWOOSWO.wav", "sound", "assets/sounds/Indie3JAMMUSIX/SWOOSWOOSWO.wav");
+		addExternal("assets/sounds/Indie3JAMMUSIX/WOAAAAAAAAAAH.wav", "sound", "assets/sounds/Indie3JAMMUSIX/WOAAAAAAAAAAH.wav");
+		addExternal("assets/sounds/Indie3JAMMUSIX/ZWAP.wav", "sound", "assets/sounds/Indie3JAMMUSIX/ZWAP.wav");
+		addExternal("assets/sounds/Indie3JAMMUSIX/ZWOOP.wav", "sound", "assets/sounds/Indie3JAMMUSIX/ZWOOP.wav");
 		addExternal("assets/sounds/sounds-go-here.txt", "text", "assets/sounds/sounds-go-here.txt");
 		addExternal("assets/tiled/indie3-background.gif", "image", "assets/tiled/indie3-background.gif");
 		addExternal("assets/tiled/indie3_tileset.png", "image", "assets/tiled/indie3_tileset.png");
@@ -210,6 +273,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/images/all_anim.png", __ASSET__assets_images_all_anim_png);
 		type.set ("assets/images/all_anim.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
+		className.set ("assets/images/bg.png", __ASSET__assets_images_bg_png);
+		type.set ("assets/images/bg.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		
 		className.set ("assets/images/bloodparticle.png", __ASSET__assets_images_bloodparticle_png);
 		type.set ("assets/images/bloodparticle.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
@@ -242,6 +308,66 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
 		type.set ("assets/music/music-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		
+		className.set ("assets/sounds/bass/BAP.wav", __ASSET__assets_sounds_bass_bap_wav);
+		type.set ("assets/sounds/bass/BAP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/bass/BIP.wav", __ASSET__assets_sounds_bass_bip_wav);
+		type.set ("assets/sounds/bass/BIP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/bass/JIMPJUMP.wav", __ASSET__assets_sounds_bass_jimpjump_wav);
+		type.set ("assets/sounds/bass/JIMPJUMP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/bass/SCHWAP.wav", __ASSET__assets_sounds_bass_schwap_wav);
+		type.set ("assets/sounds/bass/SCHWAP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/bass/SHAA.wav", __ASSET__assets_sounds_bass_shaa_wav);
+		type.set ("assets/sounds/bass/SHAA.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/bass/SPLOO.wav", __ASSET__assets_sounds_bass_sploo_wav);
+		type.set ("assets/sounds/bass/SPLOO.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/bass/SWOOSWOOSWO.wav", __ASSET__assets_sounds_bass_swooswooswo_wav);
+		type.set ("assets/sounds/bass/SWOOSWOOSWO.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/bass/WOAAAAAAAAAAH.wav", __ASSET__assets_sounds_bass_woaaaaaaaaaah_wav);
+		type.set ("assets/sounds/bass/WOAAAAAAAAAAH.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/bass/ZWAP.wav", __ASSET__assets_sounds_bass_zwap_wav);
+		type.set ("assets/sounds/bass/ZWAP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/bass/ZWOOP.wav", __ASSET__assets_sounds_bass_zwoop_wav);
+		type.set ("assets/sounds/bass/ZWOOP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/Indie3JAMMUSIX/BAP.wav", __ASSET__assets_sounds_indie3jammusix_bap_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/BAP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/Indie3JAMMUSIX/BIP.wav", __ASSET__assets_sounds_indie3jammusix_bip_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/BIP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/Indie3JAMMUSIX/JIMPJUMP.wav", __ASSET__assets_sounds_indie3jammusix_jimpjump_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/JIMPJUMP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/Indie3JAMMUSIX/SCHWAP.wav", __ASSET__assets_sounds_indie3jammusix_schwap_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/SCHWAP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/Indie3JAMMUSIX/SHAA.wav", __ASSET__assets_sounds_indie3jammusix_shaa_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/SHAA.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/Indie3JAMMUSIX/SPLOO.wav", __ASSET__assets_sounds_indie3jammusix_sploo_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/SPLOO.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/Indie3JAMMUSIX/SWOOSWOOSWO.wav", __ASSET__assets_sounds_indie3jammusix_swooswooswo_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/SWOOSWOOSWO.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/Indie3JAMMUSIX/WOAAAAAAAAAAH.wav", __ASSET__assets_sounds_indie3jammusix_woaaaaaaaaaah_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/WOAAAAAAAAAAH.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/Indie3JAMMUSIX/ZWAP.wav", __ASSET__assets_sounds_indie3jammusix_zwap_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/ZWAP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		
+		className.set ("assets/sounds/Indie3JAMMUSIX/ZWOOP.wav", __ASSET__assets_sounds_indie3jammusix_zwoop_wav);
+		type.set ("assets/sounds/Indie3JAMMUSIX/ZWOOP.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 		
 		className.set ("assets/sounds/sounds-go-here.txt", __ASSET__assets_sounds_sounds_go_here_txt);
 		type.set ("assets/sounds/sounds-go-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
@@ -934,6 +1060,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep class __ASSET__assets_data_indie3_tmx extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_data_test_tmx extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_images_all_anim_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep class __ASSET__assets_images_bg_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_bloodparticle_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_idle_anim_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray { }
@@ -945,6 +1072,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep class __ASSET__assets_images_shots_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_shots_blaster_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_sounds_bass_bap_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_bass_bip_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_bass_jimpjump_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_bass_schwap_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_bass_shaa_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_bass_sploo_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_bass_swooswooswo_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_bass_woaaaaaaaaaah_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_bass_zwap_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_bass_zwoop_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_indie3jammusix_bap_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_indie3jammusix_bip_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_indie3jammusix_jimpjump_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_indie3jammusix_schwap_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_indie3jammusix_shaa_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_indie3jammusix_sploo_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_indie3jammusix_swooswooswo_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_indie3jammusix_woaaaaaaaaaah_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_indie3jammusix_zwap_wav extends flash.media.Sound { }
+@:keep class __ASSET__assets_sounds_indie3jammusix_zwoop_wav extends flash.media.Sound { }
 @:keep class __ASSET__assets_sounds_sounds_go_here_txt extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_tiled_indie3_background_gif extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_tiled_indie3_tileset_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -1036,6 +1183,27 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #elseif (windows || mac || linux)
 
 
@@ -1043,6 +1211,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:file("assets/data/indie3.tmx") class __ASSET__assets_data_indie3_tmx extends flash.utils.ByteArray {}
 @:file("assets/data/test.tmx") class __ASSET__assets_data_test_tmx extends flash.utils.ByteArray {}
 @:bitmap("assets/images/all_anim.png") class __ASSET__assets_images_all_anim_png extends flash.display.BitmapData {}
+@:bitmap("assets/images/bg.png") class __ASSET__assets_images_bg_png extends flash.display.BitmapData {}
 @:bitmap("assets/images/bloodparticle.png") class __ASSET__assets_images_bloodparticle_png extends flash.display.BitmapData {}
 @:bitmap("assets/images/idle_anim.png") class __ASSET__assets_images_idle_anim_png extends flash.display.BitmapData {}
 @:file("assets/images/images-go-here.txt") class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray {}
@@ -1054,6 +1223,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:bitmap("assets/images/shots.png") class __ASSET__assets_images_shots_png extends flash.display.BitmapData {}
 @:bitmap("assets/images/shots_blaster.png") class __ASSET__assets_images_shots_blaster_png extends flash.display.BitmapData {}
 @:file("assets/music/music-goes-here.txt") class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray {}
+@:sound("assets/sounds/bass/BAP.wav") class __ASSET__assets_sounds_bass_bap_wav extends flash.media.Sound {}
+@:sound("assets/sounds/bass/BIP.wav") class __ASSET__assets_sounds_bass_bip_wav extends flash.media.Sound {}
+@:sound("assets/sounds/bass/JIMPJUMP.wav") class __ASSET__assets_sounds_bass_jimpjump_wav extends flash.media.Sound {}
+@:sound("assets/sounds/bass/SCHWAP.wav") class __ASSET__assets_sounds_bass_schwap_wav extends flash.media.Sound {}
+@:sound("assets/sounds/bass/SHAA.wav") class __ASSET__assets_sounds_bass_shaa_wav extends flash.media.Sound {}
+@:sound("assets/sounds/bass/SPLOO.wav") class __ASSET__assets_sounds_bass_sploo_wav extends flash.media.Sound {}
+@:sound("assets/sounds/bass/SWOOSWOOSWO.wav") class __ASSET__assets_sounds_bass_swooswooswo_wav extends flash.media.Sound {}
+@:sound("assets/sounds/bass/WOAAAAAAAAAAH.wav") class __ASSET__assets_sounds_bass_woaaaaaaaaaah_wav extends flash.media.Sound {}
+@:sound("assets/sounds/bass/ZWAP.wav") class __ASSET__assets_sounds_bass_zwap_wav extends flash.media.Sound {}
+@:sound("assets/sounds/bass/ZWOOP.wav") class __ASSET__assets_sounds_bass_zwoop_wav extends flash.media.Sound {}
+@:sound("assets/sounds/Indie3JAMMUSIX/BAP.wav") class __ASSET__assets_sounds_indie3jammusix_bap_wav extends flash.media.Sound {}
+@:sound("assets/sounds/Indie3JAMMUSIX/BIP.wav") class __ASSET__assets_sounds_indie3jammusix_bip_wav extends flash.media.Sound {}
+@:sound("assets/sounds/Indie3JAMMUSIX/JIMPJUMP.wav") class __ASSET__assets_sounds_indie3jammusix_jimpjump_wav extends flash.media.Sound {}
+@:sound("assets/sounds/Indie3JAMMUSIX/SCHWAP.wav") class __ASSET__assets_sounds_indie3jammusix_schwap_wav extends flash.media.Sound {}
+@:sound("assets/sounds/Indie3JAMMUSIX/SHAA.wav") class __ASSET__assets_sounds_indie3jammusix_shaa_wav extends flash.media.Sound {}
+@:sound("assets/sounds/Indie3JAMMUSIX/SPLOO.wav") class __ASSET__assets_sounds_indie3jammusix_sploo_wav extends flash.media.Sound {}
+@:sound("assets/sounds/Indie3JAMMUSIX/SWOOSWOOSWO.wav") class __ASSET__assets_sounds_indie3jammusix_swooswooswo_wav extends flash.media.Sound {}
+@:sound("assets/sounds/Indie3JAMMUSIX/WOAAAAAAAAAAH.wav") class __ASSET__assets_sounds_indie3jammusix_woaaaaaaaaaah_wav extends flash.media.Sound {}
+@:sound("assets/sounds/Indie3JAMMUSIX/ZWAP.wav") class __ASSET__assets_sounds_indie3jammusix_zwap_wav extends flash.media.Sound {}
+@:sound("assets/sounds/Indie3JAMMUSIX/ZWOOP.wav") class __ASSET__assets_sounds_indie3jammusix_zwoop_wav extends flash.media.Sound {}
 @:file("assets/sounds/sounds-go-here.txt") class __ASSET__assets_sounds_sounds_go_here_txt extends flash.utils.ByteArray {}
 @:bitmap("assets/tiled/indie3-background.gif") class __ASSET__assets_tiled_indie3_background_gif extends flash.display.BitmapData {}
 @:bitmap("assets/tiled/indie3_tileset.png") class __ASSET__assets_tiled_indie3_tileset_png extends flash.display.BitmapData {}
