@@ -128,6 +128,19 @@ class MenuState extends FlxState
 		add(colourBox);
 		
 		add(pregameMenuButton);
+		
+		
+		// add tutorial text
+		var tutTex:FlxText = new FlxText(16, 182, 0, "Arrows: Move, X: Jump, C: Shoot, V: SLO-MO!!!");
+		var tutTex2:FlxText = new FlxText(16, 192, 0, "Kill slimes! Try not to die!!");
+		var tutTex3:FlxText = new FlxText(16, 202, 0, "If you're out of ammo, let go of C to reload!");
+		var tutTex4:FlxText = new FlxText(16, 212, 0, "Code: @DrMelon  ---  Art: @tuffbun");
+		var tutTex5:FlxText = new FlxText(16, 222, 0, "Music: Pumped by RoccoW");
+		add(tutTex);
+		add(tutTex2);
+		add(tutTex3);
+		add(tutTex4);
+		add(tutTex5);
 		//add(profilesMenuButton);
 		//add(optionsMenuButton);
 		

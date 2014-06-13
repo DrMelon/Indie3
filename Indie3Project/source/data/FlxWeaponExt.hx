@@ -47,6 +47,7 @@ class FlxWeaponExt extends FlxWeapon
 		{
 			currentAmmo--;
 			refireCount = refireTime;
+			FlxG.sound.play("assets/sounds/bass/ZWOOP.wav");
 			return super.runFire(Method, X, Y, Target, Angle);
 		}
 		if (currentAmmo <= 0)
